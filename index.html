@@ -218,6 +218,21 @@ details[open] summary::before{content:"−"}
 .toast.on{opacity:1}
 .hero{background:linear-gradient(160deg,var(--sage-soft),var(--terra-soft));border:0}
 .sr{position:absolute;left:-9999px}
+.fc{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.fcd{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11px;color:var(--muted);text-transform:uppercase}
+.fcd .b{height:44px;width:14px;border-radius:7px;background:var(--line);display:flex;align-items:flex-end;overflow:hidden}
+.fcd .b i{display:block;width:100%;border-radius:7px}
+.fcd .n{font-size:12px;color:var(--ink2);font-weight:600;text-transform:none}
+.fcd.per .n{color:#fff;background:var(--terra);border-radius:50%;width:22px;height:22px;display:grid;place-items:center}
+.tip{display:flex;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:14px;color:var(--ink2)}
+.card>h3+.tip{border-top:0;padding-top:2px}
+.tip .i{width:22px;flex:none;text-align:center}
+.tip b{color:var(--ink);font-weight:600}
+details.tip summary{font-size:14px}
+details.tip p{font-size:14px;color:var(--ink2)}
+.bars.wide .br{grid-template-columns:132px 1fr 30px}
+.pers{font-size:11.5px;color:var(--moss);margin-left:4px}
+.quote{font-family:var(--serif);font-style:italic;color:var(--ink2);border-left:2px solid var(--line);padding-left:10px;margin:4px 0}
 a{color:var(--moss)}
 </style>
 </head>
@@ -234,6 +249,9 @@ ca:{
  today:"Avui",calendar:"Calendari",cycle:"Cicle",insights:"Estadístiques",settings:"Ajustos",
  morning:"Bon dia",afternoon:"Bona tarda",night:"Bona nit",backToday:"Tornar a avui",
  habits:"Hàbits",noHabits:"Cap hàbit programat per a aquest dia.",streak:n=>"ratxa de "+n+" dies",streakW:n=>"ratxa de "+n+" setmanes",streakM:n=>"ratxa de "+n+" mesos",periodic:"Setmanals i mensuals",thisWeek:"Aquesta setmana",thisMonth:"Aquest mes",freq:"Freqüència",fDay:"Diari",fWeek:"Setmanal",fMonth:"Mensual",timesWeek:"Vegades per setmana",timesMonth:"Vegades per mes",perW:n=>n+"× per setmana",perM:n=>n+"× al mes",last12w:"Últimes 12 setmanes",last12m:"Últims 12 mesos",weeksMet:"setmanes complertes",
+ moreFeel:"+ Una altra",addFeelPh:"Escriu-la (p. ex. nostàlgica)",add:"Afegeix",feelTxt:"Amb les teves paraules",feelTxtPh:"Com et sents i per què? (opcional)",myFeel:"Emocions personalitzades",noCustom:"Encara no n'has afegit cap. Les pots afegir des de «Com et sents?» amb «+ Una altra».",
+ bodyToday:"Avui el teu cos",fromYou:"segons les teves dades",sleepMore:"Dorm una mica més",youSleep:x=>"En aquesta etapa sols dormir "+x+" h.",bestFor:"Ideal per a",likelySym:"Et sol aparèixer",foodL:"Menjar",moveL:"Moviment",sleepL:"Descans",lastTime:"El cicle passat, en aquesta etapa, vas escriure",next7:"Propers 7 dies · energia prevista",lowAhead:x=>x+": energia baixa prevista. Dorm més i deixa marge a l'agenda.",confLow:"Com que els teus cicles varien, l'etapa és una estimació: pren-ho com a orientació.",moreCycle:"Més detalls del cicle",yourData:"Segons els teus registres",fewData:"Quan hagis registrat l'ànim i l'energia uns quants dies en aquesta etapa, aquí veuràs com acostumes a estar-hi tu.",oftenFeel:"Sovint et sents",lvl:["Molt baixa","Baixa","Mitjana","Alta","Molt alta"],
+ patterns:"Els teus patrons al llarg del cicle",enLowHigh:(a,x,b,y)=>"La teva energia sol ser més baixa a «"+a+"» ("+x+"/5) i més alta a «"+b+"» ("+y+"/5).",feelByPhase:"Emocions més freqüents per fase",sleepMood:"Son i ànim",sleepMoodTxt:(x,pos)=>pos?"Els dies que dorms 7 h o més, el teu ànim és "+x+" punts més alt que quan dorms menys.":"Els dies que dorms menys de 7 h, el teu ànim és "+x+" punts més alt (curiós!).",patternsNote:"Les previsions combinen el que se sap del cicle hormonal amb el que registres tu: ànim, energia, son, símptomes i emocions. Com més dies registris, més s'assemblaran a tu.",
  howFeel:"Com et sents?",mood:"Estat d'ànim",energy:"Energia",feelings:"Emocions",
  moodL:["Molt malament","Malament","Normal","Bé","Molt bé"],
  cycleCard:"Cicle",flow:"Regla",flowL:["Cap","Taques","Lleugera","Mitjana","Abundant"],
@@ -285,6 +303,9 @@ en:{
  today:"Today",calendar:"Calendar",cycle:"Cycle",insights:"Insights",settings:"Settings",
  morning:"Good morning",afternoon:"Good afternoon",night:"Good evening",backToday:"Back to today",
  habits:"Habits",noHabits:"No habits scheduled for this day.",streak:n=>n+"-day streak",streakW:n=>n+"-week streak",streakM:n=>n+"-month streak",periodic:"Weekly & monthly",thisWeek:"This week",thisMonth:"This month",freq:"Frequency",fDay:"Daily",fWeek:"Weekly",fMonth:"Monthly",timesWeek:"Times per week",timesMonth:"Times per month",perW:n=>n+"× a week",perM:n=>n+"× a month",last12w:"Last 12 weeks",last12m:"Last 12 months",weeksMet:"weeks completed",
+ moreFeel:"+ Another",addFeelPh:"Type it (e.g. nostalgic)",add:"Add",feelTxt:"In your own words",feelTxtPh:"How do you feel and why? (optional)",myFeel:"Custom emotions",noCustom:"None yet. Add them from “How do you feel?” with “+ Another”.",
+ bodyToday:"Your body today",fromYou:"from your data",sleepMore:"Get a bit more sleep",youSleep:x=>"At this stage you usually sleep "+x+" h.",bestFor:"Best for",likelySym:"You usually get",foodL:"Food",moveL:"Movement",sleepL:"Rest",lastTime:"Last cycle, at this stage, you wrote",next7:"Next 7 days · expected energy",lowAhead:x=>x+": low energy expected. Sleep more and leave room in your diary.",confLow:"Because your cycles vary, the stage is an estimate: take it as a guide.",moreCycle:"More cycle details",yourData:"From your logs",fewData:"Once you've logged mood and energy for a few days at this stage, you'll see how you usually feel here.",oftenFeel:"You often feel",lvl:["Very low","Low","Medium","High","Very high"],
+ patterns:"Your patterns across the cycle",enLowHigh:(a,x,b,y)=>"Your energy tends to be lowest at “"+a+"” ("+x+"/5) and highest at “"+b+"” ("+y+"/5).",feelByPhase:"Most frequent emotions by phase",sleepMood:"Sleep and mood",sleepMoodTxt:(x,pos)=>pos?"On days you sleep 7 h or more, your mood is "+x+" points higher than when you sleep less.":"On days you sleep under 7 h, your mood is "+x+" points higher (interesting!).",patternsNote:"Forecasts combine what's known about the hormonal cycle with what you log: mood, energy, sleep, symptoms and emotions. The more days you log, the more they'll look like you.",
  howFeel:"How do you feel?",mood:"Mood",energy:"Energy",feelings:"Emotions",
  moodL:["Awful","Bad","Okay","Good","Great"],
  cycleCard:"Cycle",flow:"Period",flowL:["None","Spotting","Light","Medium","Heavy"],
@@ -408,11 +429,11 @@ function fresh(){
   const td=TODAY();
   return {v:1,lang:(navigator.language||"").toLowerCase().startsWith("en")?"en":"ca",theme:"auto",name:"",created:td,onboarded:false,
     habits:DEF_HABITS.map(h=>Object.assign({days:[1,1,1,1,1,1,1],since:td},JSON.parse(JSON.stringify(h)))),
-    days:{},cycle:{len:28,plen:5,fertile:true,temp:false,mucus:true,lh:true},lastBackupN:dn(td)};
+    days:{},feelCustom:[],cycle:{len:28,plen:5,fertile:true,temp:false,mucus:true,lh:true},lastBackupN:dn(td)};
 }
 let S=fresh();
 function load(){try{const r=localStorage.getItem(KEY);if(r){const o=JSON.parse(r);if(o&&o.v===1){S=o;}}}catch(e){}migrate();}
-function migrate(){const td=TODAY();let ch=false;if(S.cycle&&S.cycle.lh===undefined){S.cycle.lh=true;ch=true;}
+function migrate(){const td=TODAY();let ch=false;if(S.cycle&&S.cycle.lh===undefined){S.cycle.lh=true;ch=true;}if(!Array.isArray(S.feelCustom)){S.feelCustom=[];ch=true;}
   DEF_HABITS.forEach(d=>{const x=S.habits.find(h=>h.id===d.id);
     if(!x){S.habits.push(Object.assign({days:[1,1,1,1,1,1,1],since:td},JSON.parse(JSON.stringify(d))));ch=true;}
     else if(d.id==="journal"&&!x.freq&&!x.active&&!x.name&&!Object.values(S.days).some(v=>v.h&&v.h.journal)){Object.assign(x,{freq:"week",per:1,active:true,since:td});ch=true;}});
@@ -518,6 +539,135 @@ function calMarks(fromK,toK){
   return m;
 }
 
+/* ================= GUIA PER ETAPA DEL CICLE ================= */
+/* Tendències generals (1–5). Es barregen amb les teves dades quan n'hi ha prou. */
+const SUBPROF={m1:{e:2,m:2.6},m2:{e:3,m:3.2},f1:{e:4,m:3.9},f2:{e:4.5,m:4.2},ov:{e:4.6,m:4.2},l1:{e:3.6,m:3.7},l2:{e:3.2,m:3.4},l3:{e:2.5,m:2.7}};
+const SUBORD=["m1","m2","f1","f2","ov","l1","l2","l3"];
+const GUIDE={
+ca:{
+ m1:{best:"Tasques tranquil·les i de revisió, ordenar idees, fer balanç i decidir amb calma. Millor no omplir l'agenda de plans socials ni de reunions llargues.",food:"Ferro (llenties, cigrons, espinacs, cloïsses, carn vermella magra) amb vitamina C (cítrics, pebrot, kiwi), que n'ajuda l'absorció. Omega-3 (sardines, salmó, nous) i gingebre poden alleujar les rampes. Molta aigua i infusions calentes.",move:"Caminar, ioga suau o estiraments. Si et ve de gust, exercici moderat: sovint alleuja les rampes.",rest:"Dorm 8–9 h si pots i fes pauses durant el dia. Calor a la panxa per a les rampes."},
+ m2:{best:"Planificar: escriure objectius, organitzar la setmana i reprendre el ritme a poc a poc.",food:"Continua amb ferro i vitamina C per recuperar el que has perdut. Proteïna a cada àpat (ous, llegums, peix).",move:"Torna a pujar la intensitat a poc a poc: caminar ràpid, bici, força lleugera.",rest:"7,5–8 h. L'energia va remuntant."},
+ f1:{best:"Aprendre coses noves, començar projectes, estudiar, pluja d'idees i tasques creatives. La concentració i la memòria solen estar en forma.",food:"Menjar fresc i variat: verdura, fruita, cereals integrals, proteïna i fermentats (iogurt, kéfir). El cos gestiona millor el sucre: bon moment per a àpats més lleugers.",move:"Entrenaments intensos i de força: el cos es recupera millor. Bon moment per provar esports nous.",rest:"7–8 h. Encara que tinguis molta energia, no retallis son."},
+ f2:{best:"Presentacions, reunions, negociar, fer contactes, entrevistes i quedar amb gent: la comunicació i la seguretat solen estar al màxim.",food:"Fibra i crucíferes (bròquil, col, coliflor), fruits vermells i verdura de colors (antioxidants), zinc (llavors de carbassa, marisc).",move:"El millor moment per a l'esforç màxim: HIIT, curses, marques personals. Escalfa bé.",rest:"7–8 h."},
+ ov:{best:"Converses importants, demanar coses, treballar en equip i fer-te visible. Energia i sociabilitat altes.",food:"Fibra, crucíferes i antioxidants (fruita i verdura de colors). Beu molta aigua.",move:"Intensitat alta si et ve de gust. Escalfa bé.",rest:"7–8 h."},
+ l1:{best:"Feina de concentració i de detall: tancar tasques, revisar, números i administració.",food:"Carbohidrats complexos (civada, arròs integral, moniato) i proteïna: la gana puja una mica perquè el cos gasta més. Magnesi (fruits secs, llavors, cacau pur).",move:"Força i resistència moderada. Notaràs més la calor: hidrata't bé.",rest:"7,5–8 h. La progesterona pot donar més son: aprofita-ho."},
+ l2:{best:"Organitzar, rutines i acabar el que tens obert. Bona fase per a feina individual i constant.",food:"Magnesi i vitamina B6 (plàtan, cigrons, nous, xocolata negra 70%+), calci (iogurt, formatge, ametlles). Àpats regulars per evitar baixades d'energia.",move:"Exercici moderat: pilates, bici, caminar, força suau.",rest:"8 h. Habitació fresca: la temperatura corporal és més alta i el son pot ser més lleuger."},
+ l3:{best:"Tasques conegudes i amb poca pressió: escriure, ordenar, creativitat més introspectiva. Si estàs irritable, ajorna decisions importants i converses difícils.",food:"Menys sal, sucre, cafeïna i alcohol, que empitjoren la inflor i l'ansietat. El calci i la vitamina B6 ajuden a reduir els símptomes premenstruals. Per als antulls, carbohidrats complexos i xocolata negra en lloc de dolços.",move:"Suau i regular: caminar, ioga, nedar. Ajuda l'ànim i la inflor.",rest:"8–9 h, horari regular i menys pantalles a la nit."}
+},
+en:{
+ m1:{best:"Quiet, review-type tasks: sorting ideas, taking stock and deciding calmly. Better not to pack your diary with social plans or long meetings.",food:"Iron (lentils, chickpeas, spinach, clams, lean red meat) with vitamin C (citrus, peppers, kiwi) to help absorption. Omega-3 (sardines, salmon, walnuts) and ginger may ease cramps. Plenty of water and warm drinks.",move:"Walking, gentle yoga or stretching. If you feel like it, moderate exercise often eases cramps.",rest:"Sleep 8–9 h if you can and take breaks. Warmth on your belly for cramps."},
+ m2:{best:"Planning: write goals, organise your week and ease back into your rhythm.",food:"Keep up iron and vitamin C to replace what you lost. Protein at every meal (eggs, pulses, fish).",move:"Build intensity back up gradually: brisk walks, cycling, light strength.",rest:"7.5–8 h. Energy is picking up."},
+ f1:{best:"Learning, starting projects, studying, brainstorming and creative work. Focus and memory are usually good.",food:"Fresh, varied food: veg, fruit, whole grains, protein and fermented foods (yoghurt, kefir). Your body handles sugar better: a good time for lighter meals.",move:"Hard and strength workouts: you recover better. A good time to try new sports.",rest:"7–8 h. Even with lots of energy, don't cut sleep."},
+ f2:{best:"Presentations, meetings, negotiating, networking, interviews and seeing people: communication and confidence tend to peak.",food:"Fibre and cruciferous veg (broccoli, cabbage, cauliflower), berries and colourful veg (antioxidants), zinc (pumpkin seeds, shellfish).",move:"Best time for max effort: HIIT, races, personal bests. Warm up well.",rest:"7–8 h."},
+ ov:{best:"Important conversations, asking for things, teamwork and being visible. High energy and sociability.",food:"Fibre, cruciferous veg and antioxidants (colourful fruit and veg). Drink plenty of water.",move:"High intensity if you feel like it. Warm up well.",rest:"7–8 h."},
+ l1:{best:"Focused, detail-oriented work: wrapping up tasks, reviewing, numbers and admin.",food:"Complex carbs (oats, brown rice, sweet potato) and protein: appetite rises a little because you burn more. Magnesium (nuts, seeds, pure cocoa).",move:"Strength and moderate endurance. You'll feel the heat more: hydrate well.",rest:"7.5–8 h. Progesterone can make you sleepier: make the most of it."},
+ l2:{best:"Organising, routines and finishing what's open. Good for steady, independent work.",food:"Magnesium and vitamin B6 (banana, chickpeas, walnuts, 70%+ dark chocolate), calcium (yoghurt, cheese, almonds). Regular meals to avoid energy dips.",move:"Moderate exercise: pilates, cycling, walking, light strength.",rest:"8 h. Keep your room cool: body temperature is higher and sleep can be lighter."},
+ l3:{best:"Familiar, low-pressure tasks: writing, tidying, more introspective creativity. If you're irritable, postpone big decisions and difficult conversations.",food:"Less salt, sugar, caffeine and alcohol, which worsen bloating and anxiety. Calcium and vitamin B6 help reduce PMS symptoms. For cravings, complex carbs and dark chocolate instead of sweets.",move:"Gentle and regular: walking, yoga, swimming. Helps mood and bloating.",rest:"8–9 h, a regular schedule and fewer screens at night."}
+}};
+const G=sp=>GUIDE[S.lang==="en"?"en":"ca"][sp];
+const subName=sp=>SUBTX[S.lang==="en"?"en":"ca"][sp].n;
+
+/* ================= EMOCIONS PERSONALITZADES ================= */
+const feelName=f=>L().feelL[f]||((S.feelCustom||[]).find(c=>c.id===f)||{}).name||f;
+const allFeel=()=>FEEL.concat((S.feelCustom||[]).map(c=>c.id));
+function addFeel(v){const nm=String(v||"").trim().slice(0,30);if(!nm)return;S.feelCustom=S.feelCustom||[];
+  let c=S.feelCustom.find(x=>x.name.toLowerCase()===nm.toLowerCase());const bi=FEEL.find(f=>L().feelL[f].toLowerCase()===nm.toLowerCase());
+  const id=bi||(c?c.id:null)||("c"+Date.now().toString(36));if(!bi&&!c)S.feelCustom.push({id,name:nm});
+  const d=ensure(EDIT);d.feel=d.feel||[];if(!d.feel.includes(id))d.feel.push(id);UI.addFeel=false;clean(EDIT);changed();}
+function delFeel(id){S.feelCustom=(S.feelCustom||[]).filter(c=>c.id!==id);Object.keys(S.days).forEach(k=>{const d=S.days[k];if(d.feel){d.feel=d.feel.filter(f=>f!==id);clean(k);}});changed();}
+let feelT;function setFeelTxt(v){const d=ensure(EDIT);d.feelTxt=v;clearTimeout(feelT);feelT=setTimeout(()=>{clean(EDIT);save();},400);}
+
+/* ================= PERFIL PERSONAL (les teves dades per etapa) ================= */
+let _pf=null,_pfKey="";
+function profile(){
+  const td=TODAY();const sig=td+"|"+JSON.stringify(S.days).length+"|"+cstats().P.length;if(_pf&&_pfKey===sig)return _pf;
+  const subs={};SUBORD.forEach(s=>subs[s]={n:0,m:[],e:[],sl:[],sym:{},feel:{},notes:[]});const all={m:[],e:[],sl:[]};
+  Object.keys(S.days).forEach(k=>{if(k>td)return;const ci=cycleAt(k);const d=S.days[k];
+    if(d.mood)all.m.push(d.mood);if(d.energy)all.e.push(d.energy);if(d.sleep!=null)all.sl.push(d.sleep);
+    if(!ci)return;const b=subs[ci.sub];b.n++;if(d.mood)b.m.push(d.mood);if(d.energy)b.e.push(d.energy);if(d.sleep!=null)b.sl.push(d.sleep);
+    (d.sym||[]).forEach(s=>b.sym[s]=(b.sym[s]||0)+1);(d.feel||[]).forEach(f=>b.feel[f]=(b.feel[f]||0)+1);
+    const tx=(d.feelTxt||d.note||"").trim();if(tx)b.notes.push({k,i:ci.i,dayN:ci.dayN,tx});});
+  _pf={subs,om:mean(all.m),oe:mean(all.e),os:mean(all.sl)};_pfKey=sig;return _pf;
+}
+/* Previsió per a una etapa: ciència + les teves dades (com més dies registris, més pes tenen les teves) */
+function forecast(sp){
+  const pf=profile(),b=pf.subs[sp],base=SUBPROF[sp];const cl=x=>Math.max(1,Math.min(5,x));
+  const bl=(arr,baseV,overall)=>{const bAdj=cl((overall||3.3)+(baseV-3.4)*0.8);if(!arr.length)return {v:bAdj,n:0};const w=arr.length/(arr.length+4);return {v:cl(w*mean(arr)+(1-w)*bAdj),n:arr.length};};
+  const E=bl(b.e,base.e,pf.oe),M=bl(b.m,base.m,pf.om);
+  const sym=Object.entries(b.sym).filter(([s,c])=>c>=2&&c/Math.max(b.n,1)>=0.3).sort((a,c)=>c[1]-a[1]).slice(0,3).map(([s,c])=>({s,p:Math.round(c*100/b.n)}));
+  const feel=Object.entries(b.feel).filter(([f,c])=>c>=2).sort((a,c)=>c[1]-a[1]).slice(0,3).map(([f])=>f);
+  const slMine=b.sl.length>=3?mean(b.sl):null;
+  const moreSleep=E.v<2.5||(slMine!=null&&pf.os!=null&&slMine<pf.os-0.5);
+  return {e:E.v,eN:E.n,m:M.v,mN:M.n,n:b.n,sym,feel,slMine,moreSleep};
+}
+/* Posició al cicle de qualsevol dia, també futur */
+function posAt(k){
+  const td=TODAY();if(k<=td){const ci=cycleAt(k);return ci?{dayN:ci.dayN,sub:ci.sub,est:ci.ovSrc==="est"}:null;}
+  const ci=cycleAt(td);if(!ci)return null;const pr=predictions();const st=cstats();
+  let dayN=ci.dayN+dn(k)-dn(td),ovDay=ci.ovDay,plen=ci.plen,est=ci.ovSrc==="est";
+  if(pr&&k>=pr.next){dayN=dn(k)-dn(pr.next)+1;plen=st.plen;ovDay=Math.max(st.avg-14,plen+2);est=true;}
+  return {dayN,sub:subPhase(dayN,ovDay,plen),est,period:pr&&k>=pr.next&&dayN<=plen};
+}
+const eCol=e=>e<2.5?"var(--terra)":e<3.5?"var(--sand)":"var(--sage)";
+const lvlTxt=v=>L().lvl[Math.max(0,Math.min(4,Math.round(v)-1))];
+const moodTxt=v=>L().moodL[Math.max(0,Math.min(4,Math.round(v)-1))];
+function lastNote(sp,ci){const b=profile().subs[sp];const prev=b.notes.filter(x=>x.i<ci.i);if(!prev.length)return null;
+  const li=Math.max(...prev.map(x=>x.i));const same=prev.filter(x=>x.i===li);same.sort((a,c)=>Math.abs(a.dayN-ci.dayN)-Math.abs(c.dayN-ci.dayN));return same[0];}
+
+/* Targeta «Avui el teu cos» + previsió de 7 dies */
+function bodyCard(k){
+  const ci=cycleAt(k);if(!ci)return "";const sp=ci.sub,g=G(sp),fc=forecast(sp),st=cstats();
+  const pers=n=>n>=3?'<span class="pers">· '+t("fromYou")+'</span>':'';
+  let h='<div class="card"><h3>'+t("bodyToday")+'<span class="muted">'+subName(sp)+'</span></h3>';
+  h+='<div class="tip"><span class="i">⚡</span><div><b>'+t("energy")+': '+lvlTxt(fc.e).toLowerCase()+'</b> · '+t("mood")+': '+moodTxt(fc.m).toLowerCase()+pers(Math.max(fc.eN,fc.mN))+'</div></div>';
+  h+='<div class="tip"><span class="i">😴</span><div>'+(fc.moreSleep?'<b>'+t("sleepMore")+'.</b> ':'')+esc(g.rest)+(fc.slMine!=null?' <span class="muted">'+t("youSleep",String(r1(fc.slMine)).replace(".",","))+'</span>':'')+'</div></div>';
+  h+='<div class="tip"><span class="i">🎯</span><div><b>'+t("bestFor")+':</b> '+esc(g.best)+'</div></div>';
+  if(fc.sym.length)h+='<div class="tip"><span class="i">⚠️</span><div><b>'+t("likelySym")+':</b> '+fc.sym.map(x=>L().symL[x.s].toLowerCase()+' ('+x.p+'%)').join(", ")+'</div></div>';
+  h+='<details class="tip" style="display:block"><summary>🥗 '+t("foodL")+' · 🏃 '+t("moveL")+'</summary><p style="margin:8px 0 4px">'+esc(g.food)+'</p><p style="margin:4px 0">'+esc(g.move)+'</p></details>';
+  const ln=lastNote(sp,ci);if(ln)h+='<div class="tip"><span class="i">📝</span><div><span class="muted">'+t("lastTime")+' ('+fmtShort(ln.k)+'):</span><div class="quote">'+esc(ln.tx.length>160?ln.tx.slice(0,157)+"…":ln.tx)+'</div></div></div>';
+  // propers 7 dies
+  const days=[];for(let i=0;i<7;i++){const dk=add(k,i);const p=posAt(dk);if(!p)continue;const f=forecast(p.sub);days.push({dk,p,f});}
+  if(days.length){
+    h+='<div class="lbl" style="margin-top:12px">'+t("next7")+'</div><div class="fc">'+days.map(x=>'<div class="fcd'+(x.p.period||(x.dk<=TODAY()&&(day(x.dk).flow||0)>=2)?' per':'')+'"><span>'+L().wd[dow(x.dk)]+'</span><span class="b"><i style="height:'+Math.round(x.f.e*20)+'%;background:'+eCol(x.f.e)+'"></i></span><span class="n">'+kdate(x.dk).getDate()+'</span></div>').join("")+'</div>';
+    const low=days.slice(1).filter(x=>x.f.e<2.5);
+    if(low.length)h+='<div class="note" style="color:var(--ink2)">'+t("lowAhead",low.map(x=>cap(fmt(x.dk,{weekday:"short"}))).join(", "))+'</div>';
+  }
+  if(ci.ovSrc==="est"&&st.irregular)h+='<div class="muted" style="margin-top:8px">'+t("confLow")+'</div>';
+  h+='<div class="row" style="margin-top:10px"><button class="btn ghost sm" style="padding-left:0" onclick="go(\'cycle\')">'+t("moreCycle")+' ›</button></div></div>';
+  return h;
+}
+/* Bloc personal i guia dins de l'explicació dia a dia */
+function guideBlock(sp,ci,d){
+  const g=G(sp),fc=forecast(sp);let h='<p><b>'+t("bestFor")+':</b> '+esc(g.best)+'</p><p><b>'+t("foodL")+':</b> '+esc(g.food)+'</p><p><b>'+t("moveL")+':</b> '+esc(g.move)+'</p><p><b>'+t("sleepL")+':</b> '+(fc.moreSleep?t("sleepMore")+'. ':'')+esc(g.rest)+'</p>';
+  h+='<div class="note" style="color:var(--ink2)"><b style="color:var(--ink)">'+t("yourData")+'</b><br>';
+  if(fc.n<3)h+=t("fewData");
+  else{h+=t("energy")+': '+lvlTxt(fc.e).toLowerCase()+(fc.eN?' ('+String(r1(fc.e)).replace(".",",")+'/5)':'')+' · '+t("mood")+': '+moodTxt(fc.m).toLowerCase()+(fc.mN?' ('+String(r1(fc.m)).replace(".",",")+'/5)':'');
+    if(fc.slMine!=null)h+='<br>'+t("youSleep",String(r1(fc.slMine)).replace(".",","));
+    if(fc.sym.length)h+='<br>'+t("likelySym")+': '+fc.sym.map(x=>L().symL[x.s].toLowerCase()+' ('+x.p+'%)').join(", ");
+    if(fc.feel.length)h+='<br>'+t("oftenFeel")+': '+fc.feel.map(f=>esc(feelName(f)).toLowerCase()).join(", ");}
+  const ln=lastNote(sp,Object.assign({},ci,{dayN:d}));if(ln)h+='<div class="quote" style="margin-top:8px">'+esc(ln.tx.length>200?ln.tx.slice(0,197)+"…":ln.tx)+'</div><span class="muted">'+fmtShort(ln.k)+'</span>';
+  return h+'</div>';
+}
+/* Patrons per a Estadístiques */
+function patternsCard(){
+  const pf=profile();const rows=SUBORD.map(s=>({s,b:pf.subs[s]})).filter(x=>x.b.e.length>=3||x.b.m.length>=3);
+  let h='<div class="card"><h3>'+t("patterns")+'</h3>';
+  if(rows.length<2)return h+'<p class="muted" style="margin:0">'+t("needData")+'</p></div>';
+  const withE=rows.filter(x=>x.b.e.length>=3);
+  if(withE.length>=2){const so=withE.slice().sort((a,c)=>mean(a.b.e)-mean(c.b.e));const lo=so[0],hi=so[so.length-1];
+    h+='<p class="sub" style="margin:0 0 8px">'+t("enLowHigh",subName(lo.s),String(r1(mean(lo.b.e))).replace(".",","),subName(hi.s),String(r1(mean(hi.b.e))).replace(".",","))+'</p>';}
+  h+='<div class="bars wide">'+rows.map(x=>{const m=mean(x.b.m),e=mean(x.b.e);return '<div class="br"><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><span class="phase-dot" style="background:'+PHCOL[SUBPH[x.s]]+'"></span>'+subName(x.s)+'</span><span><span class="tr" style="display:block;margin-bottom:3px"><i style="width:'+(m?m*20:0)+'%;background:var(--m4)"></i></span><span class="tr" style="display:block"><i style="width:'+(e?e*20:0)+'%;background:var(--sand)"></i></span></span><span class="v">'+(m?String(r1(m)).replace(".",","):"–")+'<br>'+(e?String(r1(e)).replace(".",","):"–")+'</span></div>';}).join("")+'</div>'+
+    '<div class="legend"><span><i class="sw" style="background:var(--m4)"></i>'+t("mood")+'</span><span><i class="sw" style="background:var(--sand)"></i>'+t("energy")+'</span></div>';
+  // emocions freqüents per fase
+  const fp={};PHASES.forEach(p=>fp[p]={});SUBORD.forEach(s=>Object.entries(pf.subs[s].feel).forEach(([f,c])=>{const p=SUBPH[s];fp[p][f]=(fp[p][f]||0)+c;}));
+  const fr=PHASES.map(p=>{const e=Object.entries(fp[p]).filter(x=>x[1]>=2).sort((a,c)=>c[1]-a[1]).slice(0,4);return e.length?'<div class="hstat"><b style="font-weight:550"><span class="phase-dot" style="background:'+PHCOL[p]+'"></span>'+L().phases[p]+'</b><div class="chips" style="margin-top:6px">'+e.map(([f])=>'<span class="chip">'+esc(feelName(f))+'</span>').join("")+'</div></div>':"";}).join("");
+  if(fr)h+='<div class="lbl" style="margin-top:16px">'+t("feelByPhase")+'</div>'+fr;
+  // son i ànim
+  const lo=[],hi=[];Object.keys(S.days).forEach(k=>{const d=S.days[k];if(!d.mood||d.sleep==null)return;(d.sleep<7?lo:hi).push(d.mood);});
+  if(lo.length>=4&&hi.length>=4&&Math.abs(mean(hi)-mean(lo))>=0.3){const df=mean(hi)-mean(lo);h+='<div class="lbl" style="margin-top:16px">'+t("sleepMood")+'</div><p class="sub" style="margin:0">'+t("sleepMoodTxt",String(r1(Math.abs(df))).replace(".",","),df>=0)+'</p>';}
+  return h+'<div class="note">'+t("patternsNote")+'</div></div>';
+}
+
 /* ================= NAVEGACIÓ ================= */
 let route="today",EDIT=TODAY(),CALM=TODAY().slice(0,7),LAYERS={c:true,h:true,m:true},HFILTER="",SHEET=null,UI={};
 const ICONS={
@@ -572,7 +722,10 @@ function editorHTML(k){
   // Ànim
   h+='<div class="card"><h3>'+t("howFeel")+'</h3><div class="faces">'+[1,2,3,4,5].map(n=>'<button class="face'+(d.mood===n?' on':'')+'" onclick="setv(\'mood\','+n+')">'+face(n)+'<span>'+L().moodL[n-1]+'</span></button>').join("")+'</div>'+
     '<div class="lbl">'+t("energy")+'</div><div class="lvl">'+[1,2,3,4,5].map(n=>'<button class="'+(d.energy===n?'on':'')+'" onclick="setv(\'energy\','+n+')">'+"▮".repeat(n)+'</button>').join("")+'</div>'+
-    '<div class="lbl">'+t("feelings")+'</div><div class="chips">'+FEEL.map(f=>'<button class="chip'+((d.feel||[]).includes(f)?' on':'')+'" onclick="tog(\'feel\',\''+f+'\')">'+L().feelL[f]+'</button>').join("")+'</div></div>';
+    '<div class="lbl">'+t("feelings")+'</div><div class="chips">'+allFeel().map(f=>'<button class="chip'+((d.feel||[]).includes(f)?' on':'')+'" onclick="tog(\'feel\',\''+f+'\')">'+esc(feelName(f))+'</button>').join("")+
+    (UI.addFeel?'':'<button class="chip" style="border-style:dashed" onclick="UI.addFeel=true;render();setTimeout(()=>{const e=document.getElementById(\'nfeel\');if(e)e.focus();},50)">'+t("moreFeel")+'</button>')+'</div>'+
+    (UI.addFeel?'<div class="row" style="margin-top:8px;flex-wrap:nowrap"><input type="text" id="nfeel" maxlength="30" placeholder="'+esc(t("addFeelPh"))+'" onkeydown="if(event.key===\'Enter\')addFeel(this.value)"><button class="btn pri sm" onclick="addFeel(document.getElementById(\'nfeel\').value)">'+t("add")+'</button><button class="btn sm" onclick="UI.addFeel=false;render()">✕</button></div>':'')+
+    '<div class="lbl">'+t("feelTxt")+'</div><textarea rows="2" style="min-height:52px" placeholder="'+esc(t("feelTxtPh"))+'" oninput="setFeelTxt(this.value)">'+esc(d.feelTxt||"")+'</textarea></div>';
   // Cicle
   const fl=d.flow||0;
   h+='<div class="card"><h3>'+t("cycleCard")+'</h3><div class="lbl">'+t("flow")+'</div><div class="flow">'+[0,1,2,3,4].map(n=>'<button class="'+(fl===n&&(n>0||d.flow!==undefined)?'on':'')+'" onclick="setFlow('+n+')">'+drops(n)+'<span>'+L().flowL[n]+'</span></button>').join("")+'</div>'+
@@ -621,6 +774,7 @@ function vToday(){
   }else{
     h+='<div class="card cyc" onclick="go(\'cycle\')"><div class="big" style="font-size:24px">○</div><div style="flex:1"><b>'+t("setupCycle")+'</b><div class="sub">'+t("setupCycleSub")+'</div></div><span class="muted">›</span></div>';
   }
+  if(k===td&&ci)h+=bodyCard(k);
   h+=editorHTML(k);
   return h;
 }
@@ -751,7 +905,7 @@ function dayExplainer(ci){
   return '<div class="card ph"><div class="between" style="margin-bottom:6px"><button class="icon-btn" onclick="UI.cyOff=(UI.cyOff||0)-1;render()" '+(d<=1?'disabled style="opacity:.3"':'')+'>‹</button>'+
     '<div style="text-align:center;flex:1"><div class="muted">'+(off===0?t("todayBody"):cap(fmt(date,{weekday:"long",day:"numeric",month:"long"})))+'</div><h2 style="margin-top:2px"><span class="phase-dot" style="background:'+PHCOL[ph]+'"></span>'+cap(t("day"))+' '+d+' · '+x.n+'</h2>'+(off!==0?'<button class="btn ghost sm" onclick="UI.cyOff=0;render()">'+t("backToday")+'</button>':'')+'</div>'+
     '<button class="icon-btn" onclick="UI.cyOff=(UI.cyOff||0)+1;render()" '+(d>=len?'disabled style="opacity:.3"':'')+'>›</button></div>'+
-    '<p><b>'+t("hormonesL")+'.</b> '+x.h+'</p><p><b>'+t("bodyL")+'.</b> '+x.b+'</p><p><b>'+t("feelL2")+'.</b> '+x.f+'</p>'+
+    '<p><b>'+t("hormonesL")+'.</b> '+x.h+'</p><p><b>'+t("bodyL")+'.</b> '+x.b+'</p><p><b>'+t("feelL2")+'.</b> '+x.f+'</p>'+guideBlock(sp,ci,d)+
     (est&&d>=ci.plen?'<div class="note">'+t("phaseEst")+'</div>':'')+'</div>';
 }
 function phaseExplainer(){
@@ -815,12 +969,7 @@ function vInsights(){
   // per fase
   const byP={};PHASES.forEach(p=>byP[p]={m:[],e:[],sym:{},n:0});
   Object.keys(S.days).forEach(k=>{const ci=cycleAt(k);if(!ci)return;const d=S.days[k];const b=byP[ci.phase];b.n++;if(d.mood)b.m.push(d.mood);if(d.energy)b.e.push(d.energy);(d.sym||[]).forEach(s=>b.sym[s]=(b.sym[s]||0)+1);});
-  const hasPh=PHASES.filter(p=>byP[p].m.length>=2).length>=2;
-  h+='<div class="card"><h3>'+t("moodByPhase")+'</h3>';
-  if(!hasPh)h+='<p class="muted" style="margin:0">'+t("needData")+'</p>';
-  else{h+='<div class="bars">'+PHASES.map(p=>{const m=mean(byP[p].m),e=mean(byP[p].e);return '<div class="br"><span><span class="phase-dot" style="background:'+PHCOL[p]+'"></span>'+L().phases[p]+'</span><span><span class="tr" style="display:block;margin-bottom:3px"><i style="width:'+(m?m*20:0)+'%;background:var(--m4)"></i></span><span class="tr" style="display:block"><i style="width:'+(e?e*20:0)+'%;background:var(--sand)"></i></span></span><span class="v">'+(m?r1(m).toString().replace(".",","):"–")+'<br>'+(e?r1(e).toString().replace(".",","):"–")+'</span></div>';}).join("")+'</div>'+
-    '<div class="legend"><span><i class="sw" style="background:var(--m4)"></i>'+t("mood")+'</span><span><i class="sw" style="background:var(--sand)"></i>'+t("energy")+'</span></div>';}
-  h+='</div>';
+  h+=patternsCard();
   // símptomes per fase
   const anySym=PHASES.some(p=>Object.keys(byP[p].sym).length);
   if(anySym){h+='<div class="card"><h3>'+t("symByPhase")+'</h3>'+PHASES.map(p=>{const e=Object.entries(byP[p].sym).sort((a,b)=>b[1]-a[1]).slice(0,4);if(!e.length)return "";
@@ -850,6 +999,7 @@ function vSettings(){
     S.habits.map((x,i)=>'<div class="hm'+(x.active?'':' off')+'"><span class="em">'+esc(x.emoji)+'</span><div class="nm" onclick="SHEET={type:\'habit\',id:\''+x.id+'\'};render()" style="cursor:pointer"><b>'+esc(hname(x))+'</b><small>'+(x.freq==="week"?t("perW",x.per||1):x.freq==="month"?t("perM",x.per||1):(x.type==="count"?x.target+' '+esc(hunit(x))+' · ':'')+daysTxt(x.days))+'</small></div>'+
       '<button class="mini" onclick="moveH('+i+',-1)" '+(i===0?'disabled style="opacity:.3"':'')+'>↑</button><button class="mini" onclick="moveH('+i+',1)" '+(i===S.habits.length-1?'disabled style="opacity:.3"':'')+'>↓</button>'+
       '<label class="tgl"><input type="checkbox" '+(x.active?'checked':'')+' onchange="toggleH(\''+x.id+'\',this.checked)"><i></i></label></div>').join("")+'</div>';
+  h+='<div class="card"><h3>'+t("myFeel")+'</h3>'+((S.feelCustom||[]).length?'<div class="chips">'+S.feelCustom.map(c=>'<span class="chip">'+esc(c.name)+'<button class="mini" style="width:22px;height:22px;font-size:11px;margin-right:-6px" onclick="delFeel(\''+c.id+'\')" aria-label="'+t("del")+'">✕</button></span>').join("")+'</div>':'<p class="muted" style="margin:0">'+t("noCustom")+'</p>')+'</div>';
   h+='<div class="card"><h3>'+t("cycleSettings")+'</h3>'+
     '<div class="set"><span>'+t("typLen")+'</span><input type="number" min="18" max="50" value="'+S.cycle.len+'" onchange="setCyc(\'len\',this.value,18,50)"></div>'+
     '<div class="set"><span>'+t("typPlen")+'</span><input type="number" min="1" max="12" value="'+S.cycle.plen+'" onchange="setCyc(\'plen\',this.value,1,12)"></div>'+
@@ -901,7 +1051,7 @@ function importText(txt){try{const o=JSON.parse(txt);
   if(o&&o.arrel==="merge"){(o.periods||[]).forEach(([a,b])=>setFlowRange(a,b));
     (o.habits||[]).forEach(x=>{if(!S.habits.find(h=>h.id===x.id))S.habits.push(Object.assign({days:[1,1,1,1,1,1,1],since:TODAY(),active:true},x));});
     if(o.cycle)Object.assign(S.cycle,o.cycle);S.onboarded=true;save();UI.imp=false;toast(t("added"));go("cycle");return;}
-  if(!o||o.v!==1||!o.days||!o.habits)throw 0;S=o;S.onboarded=true;if(!S.lastBackupN)S.lastBackupN=dn(TODAY());save();UI.imp=false;toast(t("imported"));go("today");}catch(e){const m=document.getElementById("impm");if(m)m.textContent=t("badImport");else toast(t("badImport"));}}
+  if(!o||o.v!==1||!o.days||!o.habits)throw 0;S=o;S.onboarded=true;if(!S.lastBackupN)S.lastBackupN=dn(TODAY());_cs=null;_pf=null;migrate();save();UI.imp=false;toast(t("imported"));go("today");}catch(e){const m=document.getElementById("impm");if(m)m.textContent=t("badImport");else toast(t("badImport"));}}
 function importFile(inp){const f=inp.files&&inp.files[0];if(f)f.text().then(importText);}
 function doReset(){S=fresh();UI={};save();go("today");}
 
